@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function HeroSection() {   
+export default function HeroSection() {
 
 
     return (
         <div id="home">
-            <div className='flex homeScreen justify-start items-center md:h-[60vh] bg-cover' >
+            <div className='flex homeScreen justify-start items-center md:h-[60vh]' >
 
                 <div className='data  '>
                     <div className='funky md:py-0'> &lt;h1&gt;</div>
@@ -62,8 +62,9 @@ export default function HeroSection() {
 
                     <div className='funky  md:py-0'> &lt;button&gt;</div>
                     <div className='flex items-center md:p-0 md:mx-7 resPadding  '>
-                        <button className='button-font resMargin border text-[#08fdd8]  border-[#08fdd8] hover:bg-[#08fdd8]  hover:text-black ease-in duration-300 md:px-10 md:py-3 '><a href="#contact"> Contact me!</a></button>
-                        <button className='button-font resMargin border text-[#08fdd8]  border-[#08fdd8] hover:bg-[#08fdd8]  hover:text-black ease-in duration-300 md:px-10 md:py-3'><a href="#home"> My resume</a></button>
+                            <button className='button-font resMargin border text-[#08fdd8]  border-[#08fdd8] hover:bg-[#08fdd8]  hover:text-black ease-in duration-300 md:px-10 md:py-3 '><a href="#contact"> Contact me!</a></button>
+
+                            <button className='button-font resMargin border text-[#08fdd8]  border-[#08fdd8] hover:bg-[#08fdd8]  hover:text-black ease-in duration-300 md:px-10 md:py-3'><a href="#home"> My resume</a></button>
 
                     </div>
                     <div className='funky md:py-0'> &lt;/button&gt;</div>

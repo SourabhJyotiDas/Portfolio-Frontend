@@ -6,7 +6,7 @@ import Loader from "./Loader"
 
 export default function Project() {
 
-  const { projects,loading } = useSelector((state) => state.project);
+  const { projects, loading } = useSelector((state) => state.project);
   const { user } = useSelector((state) => state.user)
 
   const isAdmin = user && user.role === "admin"
@@ -66,16 +66,19 @@ export default function Project() {
                 <button className='button-font resMargin border text-[#08fdd8]  border-[#08fdd8] hover:bg-[#08fdd8]  hover:text-black ease-in duration-300 md:px-10 md:py-3 '> Create New</button>
               </Link> : null
             }
-            <div className='flex flex-wrap '>
 
+
+
+
+           
+            <div className='flex flex-wrap '>
               {
                 reverseArray?.map((element) => (
-                  <div key={element._id} className="xl:w-1/4 lg:w-1/3 md:w-1/2 p-5 w-full h-full border-b-2 border-gray-800 border-opacity-75 md:border-none ">
-                    <img alt="ecommerce" className=" w-full h-[25vh] md:h-[auto]  block" src={element.img.url} />
+                  <div key={element._id} className="xl:w-1/4 lg:w-1/3 md:w-1/2 p-5 w-full h-full md:h-[60vh] lg:h-[50vh] border-b-2 border-gray-800 border-opacity-75 md:border-none flex flex-col justify-between md:my-3">
+                    <img alt="ecommerce" className=" w-full h-[25vh] md:h-[30vh] lg:h-[22vh]" src={element.img.url} />
                     <div className="mt-4">
                       <h3 className="text-gray-500 text-2xl tracking-widest title-font mb-1 myFont">{element.techStack}</h3>
                       <h2 className="text-white text-sm myPara">{element.title}</h2>
-                      <details className="mt-1 my-5 text-xs myPara text-gray-400">{element.description}</details>
                     </div>
                     <div className='flex items-center md:p-0  justify-between  '>
 
@@ -84,8 +87,6 @@ export default function Project() {
                       {isAdmin && <Link to={`/admin/project/${element._id}`}>
                         <button className='button-font  border text-[#08fdd8]  border-[#08fdd8] hover:bg-green-500  hover:text-black ease-in duration-300  '>Update</button>
                       </Link>}
-
-
                       {isAdmin && <button onClick={() => { handleDelete(element._id) }} className='button-font  border text-[#08fdd8]  border-[#08fdd8] hover:bg-red-500  hover:text-black ease-in duration-300  '>Delete</button>}
 
                     </div>
@@ -93,6 +94,9 @@ export default function Project() {
                   </div>
                 ))
               }
+
+
+
 
             </div>
             <div className='funky  md:py-0'> &lt;/section&gt;</div>

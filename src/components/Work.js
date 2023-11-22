@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProjects } from '../redux/actions/project';
+import { Tilt } from 'react-tilt';
 
 
 export default function Work() {
@@ -59,14 +60,21 @@ export default function Work() {
         {
           reverseArray && reverseArray.slice(0, 5).map((element) => (
             <div key={element._id} className="xl:w-1/4 lg:w-1/3 md:w-1/2 p-5 w-full h-full border-b-2 border-gray-800 border-opacity-75 md:border-none ">
-              <a href={element.liveLink} target="_blank" rel="noopener noreferrer">
-                <img alt="ecommerce" className=" w-full h-[25vh] md:h-[auto]  block" src={element.img.url} />
-                <div className="mt-4">
-                  <h3 className="text-gray-500 text-2xl tracking-widest title-font mb-1 myFont">{element.techStack}</h3>
-                  <h2 className="text-white text-sm myPara">{element.title}</h2>
-                  <details className="mt-1 my-5 text-xs myPara text-gray-400">{element.description}</details>
-                </div>
-              </a>
+
+              <Tilt>
+
+                <a href={element.liveLink} target="_blank" rel="noopener noreferrer">
+                  <img alt="ecommerce" className=" w-full h-[25vh] md:h-[auto]  block" src={element.img.url} />
+                  <div className="mt-4">
+                    <h3 className="text-gray-500 text-2xl tracking-widest title-font mb-1 myFont">{element.techStack}</h3>
+                    <h2 className="text-white text-sm myPara">{element.title}</h2>
+                    <details className="mt-1 my-5 text-xs myPara text-gray-400">{element.description}</details>
+                  </div>
+                </a>
+              </Tilt>
+
+
+
             </div>
           ))
         }
@@ -76,7 +84,9 @@ export default function Work() {
 
       <div className='funky  md:py-0 '> &lt;button&gt;</div>
       <div className='md:mx-10 resPadding'>
-        <button className=' button-font text-text-[#08fdd8] border-2 text-[#08fdd8]  border-[#08fdd8] hover:bg-[#08fdd8]  hover:text-black ease-in duration-300 tracking-widest md:px-10 md:py-3'><Link to='/project'>See More </Link></button>
+        <button className=' button-font  border-2 text-[#08fdd8]  border-[#08fdd8] hover:bg-[#08fdd8]  hover:text-black ease-in duration-300 tracking-widest md:px-10 md:py-3'>
+          <Link to='/project'>See More </Link>
+        </button>
       </div>
       <div className='funky  md:py-0'> &lt;/button&gt;</div>
 

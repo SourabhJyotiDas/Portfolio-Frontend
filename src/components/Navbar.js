@@ -33,7 +33,7 @@ export default function Navbar(props) {
     }
 
     return (
-        <div className=' sticky top-0 z-20 xl:hidden' >
+        <div className=' sticky top-0 z-20 lg:hidden' >
 
             <nav className='py-2 px-4 flex justify-between items-center bg-[#1d1d1d] z-20'>
 

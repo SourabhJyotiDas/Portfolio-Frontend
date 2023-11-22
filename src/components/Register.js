@@ -28,10 +28,10 @@ export default function Register() {
 
    
    return (
-      <div>
+      <div className='lg:w-full lg:min-h-full lg:flex lg:items-center lg:justify-center'>
          {
             loading ? <Loader message={"TRYING TO SIGNUP "} /> :
-               <div className=' h-[auto] flex items-center justify-center md:w-[40vw] mx-auto'>
+               <div className=' h-[auto] mx-auto md:w-[50vw]'>
                   <div className='h-[auto] w-[100%] m-auto py-5 rounded-md'>
 
                      <form onSubmit={submitHandler} className='flex flex-col justify-center items-center mt-10'>

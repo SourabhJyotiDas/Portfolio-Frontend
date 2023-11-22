@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
 import About from './components/About';
 import Contact from './components/Contact';
 import Home from './components/Home';
@@ -71,7 +70,6 @@ function App() {
         <Navbar setProgress={setProgress} isAuthenticated={isAuthenticated} />
         <div className='lg:flex '>
           <Sidenavbar />
-          {/* <Home /> */}
           <Routes>
 
             <Route exact path='/' element={<Home />} />
