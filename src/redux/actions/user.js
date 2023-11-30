@@ -1,20 +1,18 @@
 import axios from "axios";
 axios.defaults.withCredentials = true;
 
-const backendUrl = "";
-// const backendUrl = "https://sourabh-portfolio-backend.vercel.app";
-
 export const registerUser = (name, email, password) => async (dispatch) => {
   try {
     dispatch({
       type: "RegisterRequest",
     });
 
-    const { data } = await axios.post(`${backendUrl}/api/v1/register`, { name, email, password },
+    const { data } = await axios.post(`${server}/register`, { name, email, password },
       {
         headers: {
           "Content-Type": "application/json",
         },
+        withCredentials: true
       },
     );
 
@@ -37,7 +35,7 @@ export const loadUser = () => async (dispatch) => {
       type: "LoadUserRequest",
     });
 
-    const { data } = await axios.get(`${backendUrl}/api/v1/me`);
+    const { data } = await axios.get(`${server}/me`, { withCredentials: true });
 
     dispatch({
       type: "LoadUserSuccess",
@@ -59,11 +57,12 @@ export const loginUser = (email, password) => async (dispatch) => {
       type: "LoginRequest",
     });
 
-    const { data } = await axios.post(`${backendUrl}/api/v1/login`, { email, password },
+    const { data } = await axios.post(`${server}/login`, { email, password },
       {
         headers: {
           "Content-Type": "application/json",
         },
+        withCredentials: true
       },
     );
 
@@ -85,7 +84,7 @@ export const logoutUser = () => async (dispatch) => {
     dispatch({
       type: "LogoutUserRequest",
     });
-    const { data } = await axios.get(`${backendUrl}/api/v1/logout`);
+    const { data } = await axios.get(`${server}/logout`, { withCredentials: true });
 
     dispatch({
       type: "LogoutUserSuccess",

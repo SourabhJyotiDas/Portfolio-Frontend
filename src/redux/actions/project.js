@@ -10,7 +10,7 @@ export const getAllProjects = () => async (dispatch) => {
       type: "getAllProjectsRequest",
     });
 
-    const { data } = await axios.get(`${backendUrl}/api/v1/getallproject`);
+    const { data } = await axios.get(`${backendUrl}/api/v1/getallproject`,{withCredentials:true});
 
     dispatch({
       type: "getAllProjectsSuccess",
@@ -37,6 +37,7 @@ export const createNewProject = (title, description, liveLink, githubLink, techS
         headers: {
           "Content-Type": "application/json",
         },
+        withCredentials:true
       }
     );
 
@@ -67,6 +68,7 @@ export const updateProject = (title, description, liveLink, githubLink, techStac
         headers: {
           "Content-Type": "application/json",
         },
+        withCredentials:true
       }
     );
 
@@ -91,7 +93,7 @@ export const deleteMyProject = (id) => async (dispatch) => {
       type: "deleteProjectRequest",
     });
 
-    const { data } = await axios.delete(`${backendUrl}/api/v1/delete/${id}`);
+    const { data } = await axios.delete(`${backendUrl}/api/v1/delete/${id}`,{withCredentials:true});
 
     dispatch({
       type: "deleteProjectSuccess",

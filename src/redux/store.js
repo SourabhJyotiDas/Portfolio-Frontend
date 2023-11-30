@@ -12,3 +12,5 @@ const store = configureStore({
 })
 
 export default store;
+
+export const server = "https://sourabh-jyoti-das.vercel.app/api/v1"
