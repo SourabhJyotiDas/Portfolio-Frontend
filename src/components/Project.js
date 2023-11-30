@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteMyProject, getAllProjects } from '../redux/actions/project';
 import { Link, useNavigate } from 'react-router-dom';
-import Loader from "./Loader"
+import { deleteMyProject, getAllProjects } from '../redux/actions/project';
+import Loader from "./Loader";
 
 export default function Project() {
 
@@ -10,8 +10,6 @@ export default function Project() {
   const { user } = useSelector((state) => state.user)
 
   const isAdmin = user && user.role === "admin"
-
-  // console.log(isAdmin);
 
   const modifiedArray = projects && projects.map((element, index) => {
     return element = { ...element, index }

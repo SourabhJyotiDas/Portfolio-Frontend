@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.withCredentials = true;
+import { server } from "../store";
 
 export const registerUser = (name, email, password) => async (dispatch) => {
   try {

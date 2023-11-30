@@ -24,7 +24,6 @@ function App() {
 
   const dispatch = useDispatch()
 
-
   useEffect(() => {
     dispatch(loadUser())
     window.scrollTo(0, 0)
@@ -32,30 +31,10 @@ function App() {
 
   useEffect(() => {
     if (message) {
-      toast.success(message, {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
       dispatch({ type: "clearMessage" });
     }
 
     if (error) {
-      toast.error(error, {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
       dispatch({ type: "clearErrors" });
     }
   }, [dispatch, message, error, isAuthenticated])

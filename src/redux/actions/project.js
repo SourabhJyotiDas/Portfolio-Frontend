@@ -1,8 +1,5 @@
 import axios from "axios";
-axios.defaults.withCredentials = true;
-
-const backendUrl = "";
-// const backendUrl = "https://sourabh-portfolio-backend.vercel.app";
+import { server } from "../store.js";
 
 export const getAllProjects = () => async (dispatch) => {
   try {
@@ -10,7 +7,7 @@ export const getAllProjects = () => async (dispatch) => {
       type: "getAllProjectsRequest",
     });
 
-    const { data } = await axios.get(`${backendUrl}/api/v1/getallproject`,{withCredentials:true});
+    const { data } = await axios.get(`${server}/getallproject`, { withCredentials: true });
 
     dispatch({
       type: "getAllProjectsSuccess",
@@ -32,12 +29,12 @@ export const createNewProject = (title, description, liveLink, githubLink, techS
       type: "newProjectRequest",
     });
 
-    const { data } = await axios.post(`${backendUrl}/api/v1/upload`, { title, description, liveLink, githubLink, techStack, image },
+    const { data } = await axios.post(`${server}/upload`, { title, description, liveLink, githubLink, techStack, image },
       {
         headers: {
           "Content-Type": "application/json",
         },
-        withCredentials:true
+        withCredentials: true
       }
     );
 
@@ -63,12 +60,12 @@ export const updateProject = (title, description, liveLink, githubLink, techStac
       type: "updateProjectRequest",
     });
 
-    const { data } = await axios.put(`${backendUrl}/api/v1/update/${id}`, { title, description, liveLink, githubLink, techStack, image },
+    const { data } = await axios.put(`${server}/update/${id}`, { title, description, liveLink, githubLink, techStack, image },
       {
         headers: {
           "Content-Type": "application/json",
         },
-        withCredentials:true
+        withCredentials: true
       }
     );
 
@@ -93,7 +90,7 @@ export const deleteMyProject = (id) => async (dispatch) => {
       type: "deleteProjectRequest",
     });
 
-    const { data } = await axios.delete(`${backendUrl}/api/v1/delete/${id}`,{withCredentials:true});
+    const { data } = await axios.delete(`${server}/delete/${id}`, { withCredentials: true });
 
     dispatch({
       type: "deleteProjectSuccess",
