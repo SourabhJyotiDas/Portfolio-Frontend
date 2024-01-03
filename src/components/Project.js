@@ -70,9 +70,10 @@ export default function Project() {
 
            
             <div className='flex flex-wrap '>
+
               {
                 reverseArray?.map((element) => (
-                  <div key={element._id} className="xl:w-1/4 lg:w-1/3 md:w-1/2 p-5 w-full h-full md:h-[60vh] lg:h-[50vh] border-b-2 border-gray-800 border-opacity-75 md:border-none flex flex-col justify-between md:my-3">
+                  <div key={element._id} className="xl:w-1/4 lg:w-1/3 md:w-1/2 p-5 w-full h-full md:h-[60vh] lg:h-[50vh] border-b-2 border-gray-800 border-opacity-75 md:border-none flex flex-col justify-between md:my-3 hover:ease-in-out duration-300 hover:scale-105 cursor-pointer">
                     <img alt="ecommerce" className=" w-full h-[25vh] md:h-[30vh] lg:h-[22vh]" src={element.img.url} />
                     <div className="mt-4">
                       <h3 className="text-gray-500 text-2xl tracking-widest title-font mb-1 myFont">{element.techStack}</h3>

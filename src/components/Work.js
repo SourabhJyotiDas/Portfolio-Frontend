@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProjects } from '../redux/actions/project';
-import { Tilt } from 'react-tilt';
 
 
 export default function Work() {
@@ -61,8 +60,7 @@ export default function Work() {
           reverseArray && reverseArray.slice(0, 5).map((element) => (
             <div key={element._id} className="xl:w-1/4 lg:w-1/3 md:w-1/2 p-5 w-full h-full border-b-2 border-gray-800 border-opacity-75 md:border-none ">
 
-              <Tilt>
-
+              <div className=' hover:ease-in-out duration-300 hover:scale-105'>
                 <a href={element.liveLink} target="_blank" rel="noopener noreferrer">
                   <img alt="ecommerce" className=" w-full h-[25vh] md:h-[auto]  block" src={element.img.url} />
                   <div className="mt-4">
@@ -71,9 +69,7 @@ export default function Work() {
                     <details className="mt-1 my-5 text-xs myPara text-gray-400">{element.description}</details>
                   </div>
                 </a>
-              </Tilt>
-
-
+              </div>
 
             </div>
           ))
